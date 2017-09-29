@@ -18,6 +18,7 @@
 
 #include <gtk/gtk.h>
 #include <gconf/gconf-client.h>
+#include <locale.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,6 +27,7 @@ extern "C" {
 
 void systools_misc_initialize() {
 	gtk_init(NULL,NULL);
+	setlocale(LC_ALL, "C");
 	gconf_init(0,NULL,NULL);
 }
 /* DEFINE_ENTRY_POINT(systools_misc_initialize); */
