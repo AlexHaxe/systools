@@ -27,6 +27,7 @@ extern "C" {
 
 void systools_misc_initialize() {
 	gtk_init(NULL,NULL);
+	// gtk_init seems to set locale to german on a german system making trace (1.23) print 1,23
 	setlocale(LC_ALL, "C");
 	gconf_init(0,NULL,NULL);
 }
